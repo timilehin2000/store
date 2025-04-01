@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
+import cors from "cors";
 import { userRouter } from "./modules/users";
 import { errorHandler, notFoundHandler } from "./middleware";
 import { categoryRouter } from "./modules/category";
@@ -7,6 +8,12 @@ import { productRouter } from "./modules/product";
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
+
+app.get("/", (req: Request, res: Response) => {
+    res.status(200).json({ message: "Welcome home!" });
+});
 
 app.use("/api/v1/auth", userRouter);
 app.use("/api/v1/categories", categoryRouter);
