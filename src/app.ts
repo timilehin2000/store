@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/api/v1", (req: Request, res: Response) => {
     res.status(200).json({ message: "Welcome home!" });
 });
 
