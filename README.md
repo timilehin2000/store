@@ -37,11 +37,11 @@ A RESTful API for creating and managing products in a store, with JWT-based auth
 6. Optionally, **Run with Docker**:
     - Build and run Docker containers:
         ```bash
-        docker-compose up
+       docker build -t store .
         ```
     - To stop and remove Docker containers:
         ```bash
-        docker-compose down
+        docker run -p 3000:3000 --env-file .env store
         ```
 7. To run tests:
 
